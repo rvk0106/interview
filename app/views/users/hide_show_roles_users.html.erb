@@ -1,0 +1,13 @@
+ <button type="button" class="btn btn-info" onclick = "$('.roles-list').toggle()">Hide Roles</button>
+<br><br>
+<div class= "roles-list" style = "display:none;">
+	 <% @role_arr.uniq.each{|role| %>
+	 <%= check_box_tag role, role,(true if @roles.include?(role))  %>&nbsp<%= role%><br>
+	 
+	 <% } %>
+ </div>
+  <button type="button" class="btn btn-info get-users" >Show users</button>
+  <%= select_tag "role_select", options_for_select(@role_arr) , include_blank: true%>
+  <div class="result">
+  	
+  </div>

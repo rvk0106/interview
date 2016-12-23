@@ -1,0 +1,2 @@
+class RoleStore < ApplicationRecord
+end
